@@ -1,0 +1,116 @@
+/* Header Styles */
+.user-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure header stays above sidebar */
+  }
+  
+  .user-header-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-sidebar-toggle {
+    cursor: pointer;
+    font-size: 24px;
+  }
+  
+  .user-company-logo {
+    height: 60px;
+    margin-left: 10px;
+    width: 150px;
+  }
+  
+  .user-header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logout-button {
+    margin-left: auto; 
+  }
+  
+  /* Sidebar Styles */
+  .user-sidebar {
+    position: fixed;
+    top: 60px; /* Adjust based on header height */
+    left: 0;
+    bottom: 0;
+    background-color: rgb(208, 209, 215);
+    color: #464343;
+    transition: width 0.3s ease;
+    overflow-y: auto;
+    padding-top: 20px;
+    width: 220px;
+    z-index: 999; /* Ensure sidebar is behind header */
+  }
+  
+  .user-sidebar.collapsed {
+    width: 50px;
+  }
+  
+  .user-position-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
+  
+  .user-nav-item {
+    list-style: none;
+  }
+  
+  .user-nav-item .nav-link {
+    display: flex;
+    align-items: center;
+    color: #464343;
+    text-decoration: none;
+    padding: 15px 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .user-nav-item .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .user-nav-icon {
+    margin-right: 10px;
+  }
+  
+  .link_text {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+    color: #000;
+  }
+  
+  .user-nav-item.active .nav-link {
+    background-color: #f0f0f0;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 767px) {
+    .user-sidebar {
+      display: none;
+    }
+    
+    .user-sidebar.collapsed {
+      display: block;
+      width: 50px; 
+    }
+  
+    .user-sidebar.collapsed .user-nav-link .link_text {
+      display: block; /* Show text when sidebar is expanded */
+    }
+  
+    .user-sidebar .nav-link .link_text {
+      display: none; /* Hide text when sidebar is collapsed */
+    }
+  }
+  
